@@ -1,0 +1,13 @@
+<% if @error_message %>
+
+  <p> <%=@error_message %></p>
+
+<% else %>
+
+  <p>You entered: <%= @list_of_numbers.join(',') %>.  There are <%= @size_of_list%> numbers in your list.</p>
+
+  <p>The average is:  <%=@average%>.</p>
+
+<% end %>
+
+<p><%= link_to('try it again',controller: :home, action: :index) %></p>

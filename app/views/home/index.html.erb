@@ -1,0 +1,10 @@
+<h1> Hello ! </h1>
+
+Welcome to the averager website.
+
+<%= form_tag(action: :compute, method: :post) do %>
+
+  <%= text_field_tag('numbers') %>
+  <%= submit_tag("Do it!") %>
+
+<% end %>
