@@ -6,24 +6,31 @@ class AverageController < ApplicationController
 
   def compute
 
-    list_of_characters = params[:numbers].split(',')
+    if request.post?
+      list_of_characters = params[:numbers].split(',')
 
-    @list_of_numbers = []
-    @size_of_list = 0
-    @total = 0
+      @list_of_numbers = []
+      @size_of_list = 0
+      @total = 0
 
-    list_of_characters.each do |number|
-      if is_number?(number)
-        @total = @total + number.to_f
-        @size_of_list = @size_of_list + 1
-        @list_of_numbers << number
+      list_of_characters.each do |number|
+        if is_number?(number)
+          @total = @total + number.to_f
+          @size_of_list = @size_of_list + 1
+          @list_of_numbers << number
+        end
       end
-    end
 
-    if @size_of_list < 3
-      @error_message = 'You must have at least 3 numbers.'
+      if @size_of_list < 3
+        @error_message = 'You must have at least 3 numbers.'
+      else
+        @average = @total / @size_of_list
+      end
+
     else
-      @average = @total / @size_of_list
+
+      redirect_to action: :index
+
     end
 
   end

@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root controller: :home, action: :index
 
-  get  'average', :to=> 'average#index', :as=> 'average'
-  post 'compute', :to=> 'average#compute'
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'home#index'
+  match ':controller(/:action(/:id))', via: [:get, :post]
 
 end

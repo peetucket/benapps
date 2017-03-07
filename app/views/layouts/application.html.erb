@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <%=link_to 'Bens Apps', root_path %>
+    <%=link_to_if !current_page?(root_path),'Bens Apps', root_path %>
     <%= yield %>
   </body>
 </html>
