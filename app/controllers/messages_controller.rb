@@ -18,6 +18,10 @@ class MessagesController < ApplicationController
     end
   end
 
+  def coolio
+
+  end
+
   private
   def message_params
     params.require(:message).permit(:text,:password,:password_confirmation,:recipient)

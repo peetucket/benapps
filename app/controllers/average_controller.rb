@@ -1,7 +1,5 @@
 class AverageController < ApplicationController
 
-  before_filter :post_only, only: :compute
-
   def index
 
   end

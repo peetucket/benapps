@@ -2,7 +2,7 @@
 
 <p>Welcome to the averager page.</p>
 
-<%= form_tag(action: :compute, method: :post) do %>
+<%= form_tag(compute_average_path, method: :post) do %>
 
   <%= text_field_tag('numbers') %>
   <%= submit_tag("Do it!") %>
