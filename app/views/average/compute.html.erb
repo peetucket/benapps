@@ -1,13 +1,8 @@
-<% if @error_message %>
 
-  <p> <%=@error_message %></p>
+<h1>Average Computer Results</h1>
 
-<% else %>
+<p>You entered: <%= @list_of_numbers.join(',') %>.  There are <%= @size_of_list%> numbers in your list.</p>
 
-  <p>You entered: <%= @list_of_numbers.join(',') %>.  There are <%= @size_of_list%> numbers in your list.</p>
-
-  <p>The average is:  <%=@average%>.</p>
-
-<% end %>
+<p>The average is:  <%=@average%>.</p>
 
 <p><%= link_to('try it again', action: :index) %></p>
