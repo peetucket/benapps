@@ -1,0 +1,14 @@
+<h1>Enter a new message</h1>
+
+<%= validation_errors(@message) %>
+
+<%= form_for @message do |f| %>
+
+    <p>Message: <%= f.text_field(:text,size: 100) %></p>
+    <p>Password: <%= f.password_field(:password) %></p>
+    <p>Confirm Password: <%= f.password_field(:password_confirmation) %></p>
+    <p>Who is it for: <%= f.text_field(:recipient) %></p>
+
+  <%= f.submit("Create") %>
+
+<% end %>
