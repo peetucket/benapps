@@ -1,3 +1,22 @@
 <h1>Secret Code</h1>
 
 <p><%= link_to 'Enter a new message', new_message_path %></p>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th>Who it's for</th>
+      <th>Date sent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @messages.each do |message| %>
+      <tr>
+        <td><%=message.text%></td>
+        <td><%=message.recipient%></td>
+        <td><%=show_as_datetime(message.created_at.in_time_zone)%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

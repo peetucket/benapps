@@ -16,4 +16,12 @@ module ApplicationHelper
 
   end
 
+  def show_as_date(datetime)
+    datetime.blank? ? "" : datetime.strftime('%B %e, %Y')
+  end
+
+  def show_as_datetime(datetime)
+    datetime.blank? ? "" : datetime.strftime('%B %e, %Y %l:%M %p')
+  end
+
 end
