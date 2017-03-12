@@ -18,8 +18,26 @@ class MessagesController < ApplicationController
     end
   end
 
-  def coolio
+  def show
+    @message=Message.find(params[:id])
+  end
 
+  def destroy
+    @message=Message.find(params[:id])
+    @message.destroy
+    flash.now[:notice] = 'Your message has been deleted!'
+    redirect_to messages_path
+  end
+
+  def check_password
+    @message=Message.find(params[:id])
+    entered_password=params[:password]
+    if @message.password == entered_password
+      @correct_password = true
+    else
+      flash.now[:error] = 'You entered the wrong passsword!'
+    end
+    render :show
   end
 
   private

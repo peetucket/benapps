@@ -1,5 +1,7 @@
 module ApplicationHelper
 
+  include DateHelper
+
   def validation_errors(obj)
 
     return '' if obj.errors.empty?
@@ -14,14 +16,6 @@ module ApplicationHelper
 
     html.html_safe
 
-  end
-
-  def show_as_date(datetime)
-    datetime.blank? ? "" : datetime.strftime('%B %e, %Y')
-  end
-
-  def show_as_datetime(datetime)
-    datetime.blank? ? "" : datetime.strftime('%B %e, %Y %l:%M %p')
   end
 
 end

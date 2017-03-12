@@ -13,8 +13,8 @@
   <tbody>
     <% @messages.each do |message| %>
       <tr>
-        <td><%=message.text%></td>
-        <td><%=message.recipient%></td>
+        <td><%=message.encrypted_message%></td>
+        <td><%=link_to message.recipient, message_path(message.id)%></td>
         <td><%=show_as_datetime(message.created_at.in_time_zone)%></td>
       </tr>
     <% end %>

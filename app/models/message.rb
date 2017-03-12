@@ -6,4 +6,8 @@ class Message < ApplicationRecord
   validates :password, confirmation: true
   validates :recipient, presence: true
 
+  def encrypted_message
+    CodeMatch.encrypt(text)
+  end
+
 end
