@@ -1,1 +1,13 @@
-<p>Your message is <strong><%=@message.text%></strong>.</p>
+<script language="JavaScript">
+  $(document).ready(function() {
+    var delay = <%= @number_of_seconds * 1000 %>; //Your delay in milliseconds
+    $('#your_message').hide();
+    $('#your_message').fadeIn(delay/2,function(){$('#your_message').fadeOut(delay/2)});
+  });
+</script>
+
+<p>You have <%=@number_of_seconds%> seconds to read your message.<p>
+
+<p id="your_message"><strong><%=@message.text%></strong></p>
+
+<p><%= link_to 'delete this message', message_path(@message.id),method: :delete, data: { confirm: 'Are you sure?' } %></p>

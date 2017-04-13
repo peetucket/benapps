@@ -34,6 +34,7 @@ class MessagesController < ApplicationController
     entered_password=params[:password]
     if @message.password == entered_password
       @correct_password = true
+      @number_of_seconds = ((@message.text.size) / 3.0).ceil
     else
       flash.now[:error] = 'You entered the wrong passsword!'
     end
