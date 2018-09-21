@@ -48,7 +48,10 @@
         <%= link_to "Ben Apps", root_path, class: 'navbar-brand' %>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <%= render partial: 'layouts/nav_links' %>
+            <li><%= link_to "Averages", controller: :average  %></li>
+            <li><%= link_to "Secret Codes", messages_path  %></li>
+            <li><%= link_to "Days Left", days_left_path  %></li>
+
           </ul>
         </div>
       </div>

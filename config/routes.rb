@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get 'average', to: 'average#index'
   post 'compute_average', to: 'average#compute'
+  get 'days_left', to: 'home#days_left'
 
   resources :messages do
     member do
